@@ -3,7 +3,7 @@ import tools.extract as ex
 import os
 
 def split(filename):
-    return train_test_split(ex.load_file(filename))
+    return train_test_split(ex.load_file(filename), test_size=0.2)
 
 def write_split(train, test, DIR):
     train.to_csv( os.path.join(DIR, "train.csv"), sep=",", encoding="utf-8", index=False) 
